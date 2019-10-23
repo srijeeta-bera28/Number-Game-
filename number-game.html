@@ -35,16 +35,16 @@
        
           if(random[0]%2 == 0 && random[1]%2 == 0 && random[2]%2 ==0){
               moneyTotal += 300;
-              document.getElementById("message").innerHTML = " You were luck this time, you got 300 INR as all the numbers are even";
+              document.getElementById("message").innerHTML = " You were lucky this time, you got 300 INR as all the numbers are even";
             
           }else if(random[0]%2!= 0 && random[1]%2!= 0 && random[2]%2!=0){
             moneyTotal += 300;
-            document.getElementById("message").innerHTML = " You were luck this time, you got 300 INR as all the numbers are odd";
+            document.getElementById("message").innerHTML = " You were lucky this time, you got 300 INR as all the numbers are odd";
           }else if(random[0]== random[1] && random[1]== random[2] && random[0]==random[2]){
               moneyTotal += 1000;
           }else if(random[0]+1 == random[1] && random[1]+1 == random[2]){
             moneyTotal += 800;
-            document.getElementById("message").innerHTML = " You were luck this time, you got 800 INR as all the numbers have difference 1";
+            document.getElementById("message").innerHTML = " You were lucky this time, you got 800 INR as all the numbers have difference 1";
           }else{
             document.getElementById("message").innerHTML = " You are not lucky this time";
             moneyTotal -= 100;
