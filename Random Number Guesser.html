@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Random Number Guesser | Inkoop</title>
+</head>
+<body>
+        <div id="rules"  style="display: block;">
+    <h2>Random number Game</h2>
+    <!-- <br> -->
+    <h1>The rules of the game are:</h1>
+    
+    <ul>
+        <li>When the game starts, you have 1000 INR</li>
+        <li>Every time you click start, 3 random numbers are generated, 100 INR gets deducted</li>
+        <li>Every try generates three random numbers, each random number is in 0-9 range</li>
+        <li>If all the numbers are odd/even (eg. 2 4 6), you get 300 INR</li>
+        <li>If the numbers are in sequence with difference of 1 in any order (eg. 2 3 4 or 3 2 4 or 4 6 5), you get 800 INR</li>
+        <li>If all the numbers are same (eg. 4 4 4), you get 1000 INR</li>
+        <li>If INR reaches 0, your game is over</li>
+    </ul>
+</div> <!--End of rules-->
+    <div>
+        <p>You have <span id="moneyLeft">1000</span> INR.</p>
+    </div>
+        <button id="start" onclick="window.location.href='number-game.html'">Start</button>
+</body>
+</html>

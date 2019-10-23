@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <div id="random">
+                <p>The random numbers are:</p>
+                <p id="randomNumbers">1 2 3</p>
+                <p id="message">You are not lucky this time.</p>
+            <div>
+                    <p>You have <span id="moneyLeft">1000</span> INR.</p>
+                </div>
+                    <button id="start" onclick="startGame()">Start</button>
+            
+    <script type="text/javascript">
+    
+    function randomNum(min,max){
+        var num = [];
+        for(var i=0;i<3;i++){
+            num.push(Math.floor(Math.random()*max)+min); 
+        }  
+        return num.join(""); 
+        
+    }
+    
+    moneyTotal = 1000;
+     function startGame(){
+         
+          var random = randomNum(0,9);
+          document.getElementById("randomNumbers").innerHTML = random[0] + " " + random[1] + " " + random[2];
+       
+          if(random[0]%2 == 0 && random[1]%2 == 0 && random[2]%2 ==0){
+              moneyTotal += 300;
+              document.getElementById("message").innerHTML = " You were luck this time, you got 300 INR as all the numbers are even";
+            
+          }else if(random[0]%2!= 0 && random[1]%2!= 0 && random[2]%2!=0){
+            moneyTotal += 300;
+            document.getElementById("message").innerHTML = " You were luck this time, you got 300 INR as all the numbers are odd";
+          }else if(random[0]== random[1] && random[1]== random[2] && random[0]==random[2]){
+              moneyTotal += 1000;
+          }else if(random[0]+1 == random[1] && random[1]+1 == random[2]){
+            moneyTotal += 800;
+            document.getElementById("message").innerHTML = " You were luck this time, you got 800 INR as all the numbers have difference 1";
+          }else{
+            document.getElementById("message").innerHTML = " You are not lucky this time";
+            moneyTotal -= 100;
+          }
+          document.getElementById("moneyLeft").innerHTML = moneyTotal;
+         
+          gameOver();
+        }
+    
+
+        function gameOver(){
+            if(moneyTotal< 100 ){
+                document.getElementById("start").disabled = true;
+                document.getElementById("message").innerHTML = "Game Over";
+            }else{
+                document.getElementById("start").disabled = false;
+            }
+        }
+     
+    </script>    
+
+</body>
+</html>
